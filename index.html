@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congressional Debate: Bill Analysis and Speech Writing Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -48,11 +47,35 @@
             margin-top: 10px;
             border-radius: 8px;
         }
+        .non-selectable {
+            user-select: none;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .grid-item {
+            padding: 20px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+        .rules-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .rule-item {
+            margin-bottom: 10px;
+        }
+        .general-rules-container, .speech-tips-container {
+            min-height: 400px;
+        }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 non-selectable">
     <div class="container mx-auto p-4">
-        <h1 class="text-4xl font-bold text-center mb-6">Congressional Debate: Bill Analysis and Speech Writing Guide</h1>
+        <h1 class="text-4xl font-bold text-center mb-6 non-selectable">Congressional Debate: Bill Analysis and Speech Writing Guide</h1>
 
         <div class="flex justify-center mb-4">
             <button id="purposeButton" class="tab-button">
@@ -63,15 +86,15 @@
             <button id="speechTab" class="tab-button">Model Speech Analysis</button>
         </div>
 
-        <div id="purposeAlert" class="mb-4 p-4 bg-blue-100 text-blue-700 rounded hidden">
+        <div id="purposeAlert" class="mb-4 p-4 bg-blue-100 text-blue-700 rounded hidden non-selectable">
             <h2 class="font-bold">Purpose of this Guide</h2>
             <p>
-                This interactive guide demonstrates how to analyze a sample bill and craft a compelling speech for Congressional Debate. Using a resolution about Turkey's role in NATO as an example, you'll learn techniques for bill interpretation and effective speech writing. The sample bill and speech provided here serve as models to illustrate best practices in Congressional Debate preparation, helping you develop critical thinking and persuasive speaking skills.
+                This interactive guide demonstrates how to analyze a sample bill and craft a compelling speech for Congressional Debate. Using a resolution about Turkey's role in NATO as an example, you'll learn techniques for bill interpretation and effective speech writing.
             </p>
         </div>
 
         <!-- Bill Section -->
-        <div id="billContent" class="bg-white p-4 rounded-b-lg">
+        <div id="billContent" class="bg-white p-4 rounded-b-lg non-selectable">
             <div>
                 <h2 class="text-2xl font-bold mb-4">Sample Bill: A Resolution to Suspend Turkey's Veto Power in NATO</h2>
                 <div id="billClauses" class="mb-4"></div>
@@ -82,12 +105,41 @@
                 <p class="mb-4">Understanding each clause</p>
                 <div id="billExplanations"></div>
             </div>
+
+            <!-- General Rules for Understanding the Bill -->
+            <div class="general-rules-container mt-8 grid-item">
+                <h3 class="rules-title">General Rules for Understanding a Bill</h3>
+                <div class="rule-item">
+                    <strong>WHEREAS:</strong> This clause introduces reasons for action in a bill. It explains the background or problem that the bill addresses.
+                </div>
+                <div class="rule-item">
+                    <strong>RESOLVED:</strong> The action clause specifying what the bill intends to accomplish.
+                </div>
+                <div class="rule-item">
+                    <strong>Null and Void:</strong> A term meaning that something is no longer valid or has no legal effect.
+                </div>
+                <div class="rule-item">
+                    <strong>Loopholes:</strong> Look for ambiguous or unclear language that could be exploited.
+                </div>
+                <div class="rule-item">
+                    <strong>Definitions:</strong> Always check if key terms are clearly defined. Unclear definitions can weaken the effectiveness of a bill.
+                </div>
+                <div class="rule-item">
+                    <strong>Impact:</strong> Understand the potential consequences of the bill, both positive and negative.
+                </div>
+                <div class="rule-item">
+                    <strong>Look for Hidden Clauses:</strong> Bills may have provisions that aren't immediately obvious. Pay attention to the fine details.
+                </div>
+                <div class="rule-item">
+                    <strong>Example:</strong> In a hypothetical bill about banning plastic straws, make sure the bill defines "plastic" clearly. Look for unintended loopholes like whether certain biodegradable plastics are included or exempt.
+                </div>
+            </div>
         </div>
 
         <!-- Speech Section -->
-        <div id="speechContent" class="darker-background p-4 rounded-b-lg hidden">
+        <div id="speechContent" class="darker-background p-4 rounded-b-lg hidden non-selectable">
             <h2 class="text-xl font-bold mb-2">Model Speech Analysis</h2>
-            <p class="mb-4">This exemplary speech demonstrates effective argumentation and persuasive techniques in response to the bill about Turkey's NATO membership. Study its structure and rhetoric to improve your own speech writing for Congressional Debate.</p>
+            <p class="mb-4">This exemplary speech demonstrates effective argumentation and persuasive techniques in response to the bill about Turkey's NATO membership.</p>
             
             <!-- Progress Bar -->
             <div class="w-full bg-gray-200 rounded-full progress-bar-container mb-4">
@@ -96,10 +148,36 @@
             
             <!-- Speech Text -->
             <div id="speechText" class="max-h-[calc(100vh-300px)] overflow-y-auto"></div>
+
+            <!-- General Tips for Writing a Speech -->
+            <div class="speech-tips-container grid-item mt-8">
+                <h3 class="rules-title">General Tips for Writing a Speech</h3>
+                <div class="rule-item">
+                    <strong>Introduction:</strong> Start by grabbing the audience's attention with a strong opening statement and introduce the topic clearly.
+                </div>
+                <div class="rule-item">
+                    <strong>Body (Middle Section):</strong> Focus on one point per paragraph. Provide evidence to support your argument, such as statistics, examples, or expert opinions.
+                </div>
+                <div class="rule-item">
+                    <strong>Conclusion:</strong> Summarize your main points and provide a call to action or closing statement that leaves a lasting impression.
+                </div>
+                <div class="rule-item">
+                    <strong>Persuasion Techniques:</strong> Use rhetorical questions, emotional appeals, and vivid language to engage your audience and emphasize key points.
+                </div>
+                <div class="rule-item">
+                    <strong>Flow of Argument:</strong> Make sure each part of your speech logically flows into the next, maintaining clarity and coherence.
+                </div>
+                <div class="rule-item">
+                    <strong>Confidence and Delivery:</strong> The best speeches are delivered with confidence. Practice your speech multiple times to ensure smooth delivery.
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
+        // Disable right-click on the entire page
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
         const bill = {
             title: "A Resolution to Suspend Turkey's Veto Power in NATO",
             clauses: [
@@ -112,11 +190,11 @@
         };
 
         const explanations = [
-            "This clause accuses Turkey of using their veto power in NATO for self-serving purposes, rather than for the collective good of the alliance. It suggests that Turkey is willing to manipulate its position within NATO to achieve its own goals, potentially at the expense of the alliance's overall objectives.",
-            "This clause highlights how Turkey's actions undermine the ethical and operational standards of NATO. It implies that Turkey's behavior is not only problematic on a moral level but also impacts NATO's ability to function effectively as a unified alliance.",
-            "This section provides evidence of Turkey's repeated obstruction within NATO, using their veto to stall key decisions. It suggests a pattern of behavior where Turkey consistently uses its veto power as a bargaining chip, potentially compromising NATO's ability to respond quickly and decisively to international challenges.",
-            "Here, Turkey's human rights abuses, particularly against the Kurdish population, are introduced as a significant issue that has gone unaddressed. This clause also labels Turkey as an 'untrustworthy ally,' suggesting that their actions both internally and within the alliance have eroded trust among NATO members.",
-            "The bill concludes with a clear recommendation to suspend Turkey's veto power, arguing that this step will protect NATO's ability to act cohesively in the future. This resolution proposes a specific action to address the issues raised in the previous clauses, aiming to limit Turkey's ability to obstruct NATO's decision-making processes."
+            "This clause accuses Turkey of using their veto power in NATO for self-serving purposes, rather than for the collective good of the alliance.",
+            "This clause highlights how Turkey's actions undermine the ethical and operational standards of NATO.",
+            "This section provides evidence of Turkey's repeated obstruction within NATO, using their veto to stall key decisions.",
+            "Here, Turkey's human rights abuses, particularly against the Kurdish population, are introduced as a significant issue.",
+            "The bill concludes with a clear recommendation to suspend Turkey's veto power, aiming to limit Turkey's ability to obstruct NATO's decision-making processes."
         ];
 
         const fullSpeech = `If you name any NATO policy, I can guarantee you Turkey has found a way to violate it. This is not a case of a few mistakes or misunderstandings—it's a pattern of deliberate defiance. Turkey is no longer a reliable ally but a rogue actor working against the very values NATO was built to defend. It's time we recognize the reality: Turkey no longer belongs in NATO.
@@ -138,32 +216,32 @@ NATO is at a crossroads. Do we stand by our values or do we let them be eroded f
         const speechHighlights = [
             {
                 text: "Turkey is no longer a reliable ally but a rogue actor working against the very values NATO was built to defend.",
-                explanation: "This phrase paints Turkey as not just a problematic member of NATO but as an entity working against the alliance's core values. By using the term 'rogue actor,' the speaker emphasizes that Turkey's actions are not just missteps, but deliberate moves that undermine NATO's foundation.",
+                explanation: "This phrase paints Turkey as not just a problematic member of NATO but as an entity working against the alliance's core values.",
                 technique: "Strong language and framing"
             },
             {
                 text: "Turkey under President Erdogan has strayed far from these principles.",
-                explanation: "By directly pointing at Turkey's leadership under President Erdogan, the speaker personalizes the issue. This approach makes it clear that the problem lies with the current leadership, not necessarily with Turkey as a whole or its people.",
+                explanation: "By directly pointing at Turkey's leadership under President Erdogan, the speaker personalizes the issue.",
                 technique: "Personalization of the issue"
             },
             {
                 text: "How can we sit here and continue to claim we are a united alliance of democracies when one of our own members is actively dismantling democracy within its borders?",
-                explanation: "This rhetorical question challenges the audience to confront the contradiction between NATO's stated values and Turkey's authoritarian behavior. It forces listeners to question the integrity of the alliance if it continues to include members that don't uphold its core principles.",
+                explanation: "This rhetorical question challenges the audience to confront the contradiction between NATO's stated values and Turkey's authoritarian behavior.",
                 technique: "Rhetorical question"
             },
             {
                 text: "Turkey's reckless decision to buy Russia's S-400 missile system in 2019 wasn't just a breach of trust—it was a direct threat to NATO's security.",
-                explanation: "This statement elevates Turkey's actions from a diplomatic disagreement to a security threat. By framing the purchase of Russia's S-400 as a 'direct threat,' the speaker emphasizes the severity of Turkey's actions and their potential consequences for the entire alliance.",
+                explanation: "This statement elevates Turkey's actions from a diplomatic disagreement to a security threat.",
                 technique: "Escalation of severity"
             },
             {
                 text: "Turkey's actions displaced over 200,000 civilians and fueled human rights abuses.",
-                explanation: "Here, the speaker uses specific statistics and mentions human rights abuses to appeal to the audience's emotions and moral sensibilities. By quantifying the human cost of Turkey's actions, the speaker makes the issue more tangible and urgent.",
+                explanation: "Here, the speaker uses specific statistics and mentions human rights abuses to appeal to the audience's emotions and moral sensibilities.",
                 technique: "Use of statistics and emotional appeal"
             },
             {
                 text: "By keeping Turkey in NATO, we aren't just compromising our security—we are compromising our principles.",
-                explanation: "This sentence frames the debate as both a security issue and a matter of ethical integrity. It suggests that allowing Turkey to remain in NATO doesn't just pose practical risks, but also undermines the very values that the alliance stands for.",
+                explanation: "This sentence frames the debate as both a security issue and a matter of ethical integrity.",
                 technique: "Dual framing (security and ethics)"
             }
         ];
